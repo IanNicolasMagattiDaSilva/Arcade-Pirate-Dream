@@ -6,15 +6,41 @@ public class ControleJogador : MonoBehaviour
 {
     public float velocidade;
     public Controlador controlador;
-
+    public Animator anim;
+    float fator = 0;
     private float movimento;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     // Update is called once per frame
     void Update()
     {
         movimento = Input.GetAxis("Horizontal");
-        transform.Translate(Vector2.right * movimento * velocidade * Time.deltaTime);
+        
+        if (movimento != 0)
+        {
+            anim.SetBool("Move", true);
+            if(movimento > 0)
+            {
+                transform.eulerAngles = Vector3.zero;
+                fator = 1;
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0f,180f,0f);
+                fator = -1;
+            }
+            transform.Translate(Vector2.right * movimento * velocidade * fator * Time.deltaTime);
+        }
+        else
+        {
+            anim.SetBool("Move", false);
+        }
+
     }
+    
 
     void OnTriggerEnter2D(Collider2D other)
     {
