@@ -38,8 +38,8 @@ public class Controlador : MonoBehaviour
             yield return new WaitForSeconds(tempo);
 
             float posicao = Random.Range(-8f, 8f);
-            float item = Random.Range(0,1);
-            if (item > 0.8f)
+            float item = Random.Range(0,10);
+            if (item > 8f)
             {
                 Instantiate(bomba, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
             }

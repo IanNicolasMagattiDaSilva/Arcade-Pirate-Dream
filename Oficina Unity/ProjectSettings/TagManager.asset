@@ -43,3 +43,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 4152299889
+    locked: 0
+  - name: Background2
+    uniqueID: 69082607
+    locked: 0
+  - name: Sky
+    uniqueID: 3876208401
+    locked: 0
+  - name: LandScape
+    uniqueID: 650593415
+    locked: 0
+  - name: Floor
+    uniqueID: 868607309
+    locked: 0
+  - name: Player
+    uniqueID: 3794084219
+    locked: 0
+  - name: UI
+    uniqueID: 1130361805
+    locked: 0
