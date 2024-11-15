@@ -7,7 +7,7 @@ public class Controlador : MonoBehaviour
 {
     public TMP_Text placarTexto;
     public Transform brotador;
-    public GameObject fruta, bomba;
+    public GameObject Gcoin,Scoin,Gdiamond,Bdiamond,Rdiamond, bomba;
 
     public float tempo;
 
@@ -43,9 +43,25 @@ public class Controlador : MonoBehaviour
             {
                 Instantiate(bomba, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
             }
-            else
+            else if(item > 7f)
             {
-                Instantiate(fruta, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
+                Instantiate(Rdiamond, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
+            }
+            else if (item > 6f)
+            {
+                Instantiate(Bdiamond, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
+            }
+            else if (item > 5f)
+            {
+                Instantiate(Gdiamond, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
+            }
+            else if (item > 3f)
+            {
+                Instantiate(Gcoin, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
+            }
+            else if (item > 0f)
+            {
+                Instantiate(Scoin, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
             }
         }
     }

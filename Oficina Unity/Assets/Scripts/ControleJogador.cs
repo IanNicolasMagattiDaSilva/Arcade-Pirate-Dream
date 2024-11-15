@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ public class ControleJogador : MonoBehaviour
 {
     public float velocidade;
     public Controlador controlador;
+    public BoxCollider2D col;
     public Animator anim;
     float fator = 0;
     public int vida;
@@ -18,6 +20,7 @@ public class ControleJogador : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         StartCoroutine("MoveSet");
+        col = GetComponent<BoxCollider2D>();
     }
     // Update is called once per frame
     void Update()
@@ -48,7 +51,7 @@ public class ControleJogador : MonoBehaviour
                 {
                     anim.SetBool("Dead", true);
                     StartCoroutine(TimeToDestroy(0.5f, other));
-                    StopAllCoroutines();
+                    
                 }
                 else
                 {
@@ -83,9 +86,9 @@ public class ControleJogador : MonoBehaviour
     IEnumerator AnimDie()
     {
         anim.SetBool("Hit", true);
-        yield return new WaitForSeconds(1);
-        anim.SetBool("Hit", false);
-        yield return null;
+        col.IsDestroyed();
+        StopCoroutine("MoveSet");
+        yield return new WaitForSeconds(2);
     }
     IEnumerator MoveSet()
     {
