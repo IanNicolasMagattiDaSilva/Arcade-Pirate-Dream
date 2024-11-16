@@ -56,6 +56,7 @@ public class ControleJogador : MonoBehaviour
             }
             else if (other.gameObject.tag == "Bomba")
             {
+                controlador.EncostouBomba();
                 vida -= 1;
                 if( vida == 0 )
                 {
@@ -125,4 +126,5 @@ public class ControleJogador : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
+    
 }

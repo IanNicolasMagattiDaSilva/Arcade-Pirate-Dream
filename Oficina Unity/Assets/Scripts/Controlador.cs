@@ -7,6 +7,7 @@ public class Controlador : MonoBehaviour
 {
     public TMP_Text placarTexto;
     public Transform brotador;
+    private Animator anim;
     public GameObject Gcoin,Scoin,Gdiamond,Bdiamond,Rdiamond, bomba;
 
     public float tempo;
@@ -15,6 +16,7 @@ public class Controlador : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         placar = 0;
         placarTexto.SetText(placar.ToString());
         StartCoroutine(AparecerObjetos());
@@ -22,6 +24,7 @@ public class Controlador : MonoBehaviour
 
     public void EncostouBomba()
     {
+        anim.SetTrigger("Shake");
         Debug.Log("Recomeçar jogo");
     }
 
@@ -29,6 +32,11 @@ public class Controlador : MonoBehaviour
     {
         placar += pontos;
         placarTexto.SetText(placar.ToString());
+    }
+    public void ExitGame()
+    {
+        Debug.Log("Saindo do Jogo");
+        Application.Quit();
     }
 
     IEnumerator AparecerObjetos()
