@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3833575228866184040}
   - component: {fileID: 661539210394305377}
+  - component: {fileID: -3697953782386598365}
   m_Layer: 0
   m_Name: Small Cloud
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8425849973775734008}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.57, y: 1.7, z: -0.3365307}
+  m_LocalPosition: {x: 9.4, y: 1.7, z: -0.3365307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,3 +85,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3697953782386598365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425849973775734008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 0000000071117ff7ef1d1e04113f0ae78744c7264de5c5337b2125e27f635912cdf35f43
+  m_ShapePath:
+  - {x: -1.15625, y: -0.375, z: 0}
+  - {x: -0.37808514, y: 0.31190538, z: 0}
+  - {x: -0.063575745, y: 0.2803583, z: 0}
+  - {x: 1.15625, y: -0.375, z: 0}
+  m_ShapePathHash: 812656565
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -290784
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.031547308, z: 0}
+    m_Extent: {x: 1.15625, y: 0.3434527, z: 0}

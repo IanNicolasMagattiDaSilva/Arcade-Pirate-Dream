@@ -10,11 +10,11 @@ public class ControleJogador : MonoBehaviour
     public float velocidade;
     public Controlador controlador;
     public BoxCollider2D col;
-    public Animator anim;
+    public Animator anim, juice;
     float fator = 0;
     public int vida;
     private float movimento;
-    private bool die = false;
+    public bool die = false;
     
     private void Start()
     {
@@ -25,10 +25,7 @@ public class ControleJogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (die) 
-        {
-            StopAllCoroutines();
-        }
+        
 
     }
     
@@ -42,6 +39,7 @@ public class ControleJogador : MonoBehaviour
             Debug.Log(other.name);
             cair.velocidade = 0;
             int pontos = 0;
+            StartCoroutine(TimeToDestroy(0.5f, other));
             if (other.gameObject.tag == "Fruta")
             {
                 switch(other.gameObject.name)
@@ -64,14 +62,13 @@ public class ControleJogador : MonoBehaviour
                     anim.SetBool("Dead", true);
                     die = true;
                     StopCoroutine("MoveSet");
-                    StartCoroutine(TimeToDestroy(0.5f, other));
-                    
+
+                    juice.SetBool("Dead", true);
                 }
                 else
                 {
                     animOther.SetBool("explode", true);
                     StartCoroutine("AnimHit");
-                    StartCoroutine(TimeToDestroy(0.5f, other));
                 }
                 
             }
@@ -107,6 +104,7 @@ public class ControleJogador : MonoBehaviour
             if (movimento != 0)
             {
                 anim.SetBool("Move", true);
+                juice.SetBool("Run", true);
                 if (movimento > 0)
                 {
                     transform.eulerAngles = Vector3.zero;
@@ -122,6 +120,7 @@ public class ControleJogador : MonoBehaviour
             else
             {
                 anim.SetBool("Move", false);
+                juice.SetBool("Run", false);
             }
             yield return new WaitForEndOfFrame();
         }
