@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class IndVida : MonoBehaviour
@@ -8,12 +9,13 @@ public class IndVida : MonoBehaviour
     public float length, starPos;
     public GameObject vida;
     public int vidaAtual;
+    public List<GameObject> Vidas = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
         starPos = transform.position.x;
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        length = vida.GetComponent<SpriteRenderer>().bounds.size.x;
         PrintVida();
         vidaAtual = Jogador.vida;
     }
@@ -23,7 +25,7 @@ public class IndVida : MonoBehaviour
     {
         if(vidaAtual > Jogador.vida)
         {
-            Destroy(GameObject.Find("PontosVida(Clone)"));
+            Destroy(Vidas[vidaAtual-1]);
             vidaAtual = Jogador.vida;
         }
     }
@@ -32,7 +34,7 @@ public class IndVida : MonoBehaviour
         int i = 0;
         for(i = 0; i< Jogador.vida; i++)
         {
-            Instantiate(vida, new Vector3(starPos+(i*length), transform.position.y, 0), Quaternion.identity);
+            Vidas.Add(Instantiate(vida, new Vector3(starPos + (i * length), transform.position.y, 0), Quaternion.identity));
         }
         
     }

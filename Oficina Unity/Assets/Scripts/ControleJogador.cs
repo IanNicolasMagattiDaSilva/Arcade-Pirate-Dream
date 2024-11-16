@@ -14,7 +14,7 @@ public class ControleJogador : MonoBehaviour
     float fator = 0;
     public int vida;
     private float movimento;
-
+    private bool die = false;
     
     private void Start()
     {
@@ -25,22 +25,34 @@ public class ControleJogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (die) 
+        {
+            StopAllCoroutines();
+        }
 
     }
     
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other != null)
+        if (other != null && !die)
         {
             Animator animOther = other.gameObject.GetComponent<Animator>();
             Cair cair = other.gameObject.GetComponent<Cair>();
             Debug.Log(other.name);
             cair.velocidade = 0;
+            int pontos = 0;
             if (other.gameObject.tag == "Fruta")
             {
-                controlador.EncostouFruta();
+                switch(other.gameObject.name)
+                {
+                    case "SilverCoin(Clone)": pontos = 1; break;
+                    case "Coin(Clone)": pontos = 5; break;
+                    case "GreenDiamond(Clone)": pontos = 10; break;
+                    case "BlueDiamond(Clone)": pontos = 25; break;
+                    case "RedDiamond(Clone)": pontos = 50; break;
+                }
+                controlador.EncostouFruta(pontos);
                 animOther.SetBool("effect", true);
                 StartCoroutine(TimeToDestroy(0.25f, other));
             }
@@ -50,6 +62,8 @@ public class ControleJogador : MonoBehaviour
                 if( vida == 0 )
                 {
                     anim.SetBool("Dead", true);
+                    die = true;
+                    StopCoroutine("MoveSet");
                     StartCoroutine(TimeToDestroy(0.5f, other));
                     
                 }
@@ -83,16 +97,10 @@ public class ControleJogador : MonoBehaviour
         anim.SetBool("Hit", false);
         yield return null;
     }
-    IEnumerator AnimDie()
-    {
-        anim.SetBool("Hit", true);
-        col.IsDestroyed();
-        StopCoroutine("MoveSet");
-        yield return new WaitForSeconds(2);
-    }
+    
     IEnumerator MoveSet()
     {
-        while (true)
+        while (!die)
         {
             movimento = Input.GetAxis("Horizontal");
 

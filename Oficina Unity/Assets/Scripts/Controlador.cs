@@ -25,9 +25,9 @@ public class Controlador : MonoBehaviour
         Debug.Log("Recomeçar jogo");
     }
 
-    public void EncostouFruta()
+    public void EncostouFruta(int pontos)
     {
-        placar += 1;
+        placar += pontos;
         placarTexto.SetText(placar.ToString());
     }
 
@@ -43,11 +43,11 @@ public class Controlador : MonoBehaviour
             {
                 Instantiate(bomba, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
             }
-            else if(item > 7f)
+            else if(item > 7.5f)
             {
                 Instantiate(Rdiamond, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
             }
-            else if (item > 6f)
+            else if (item > 6.25f)
             {
                 Instantiate(Bdiamond, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
             }
