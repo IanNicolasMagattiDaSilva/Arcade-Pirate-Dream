@@ -2,19 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor;
+using UnityEngine.SceneManagement;
 
 public class Controlador : MonoBehaviour
 {
-    public TMP_Text placarTexto;
+    public TMP_Text placarTexto, placarGO;
     public Transform brotador;
     private Animator anim;
     public GameObject Gcoin,Scoin,Gdiamond,Bdiamond,Rdiamond, bomba;
-
+    public List<GameObject> inGame,endGame = new List<GameObject>();
     public float tempo;
 
-    private int placar;
+    public int placar;
 
-    void Start()
+    public void Replay()
+    {
+        placar = 0;
+        placarTexto.SetText(placar.ToString());
+    }
+    public void Start()
     {
         anim = GetComponent<Animator>();
         placar = 0;
@@ -25,7 +32,6 @@ public class Controlador : MonoBehaviour
     public void EncostouBomba()
     {
         anim.SetTrigger("Shake");
-        Debug.Log("Recomeçar jogo");
     }
 
     public void EncostouFruta(int pontos)
@@ -36,7 +42,14 @@ public class Controlador : MonoBehaviour
     public void ExitGame()
     {
         Debug.Log("Saindo do Jogo");
+#if UNITY_EDITOR
+        // Para funcionar no Editor do Unity
+        EditorApplication.isPlaying = false;
+#else
+        // Para builds (jogo publicado)
         Application.Quit();
+#endif
+        
     }
 
     IEnumerator AparecerObjetos()
@@ -72,5 +85,22 @@ public class Controlador : MonoBehaviour
                 Instantiate(Scoin, new Vector3(posicao, brotador.position.y, 0), Quaternion.identity);
             }
         }
+    }
+
+    public void GameOverF()
+    {
+        foreach(GameObject obj in inGame)
+        {
+            obj.SetActive(false);
+        }
+    }
+    public void GameOverT()
+    {
+
+        foreach (GameObject obj in inGame)
+        {
+            obj.SetActive(true);
+        }
+        placarGO.SetText("Placar: " + (placar.ToString()));
     }
 }

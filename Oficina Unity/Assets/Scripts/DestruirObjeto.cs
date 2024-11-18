@@ -11,7 +11,6 @@ public class DestruirObjeto : MonoBehaviour
         {
             Animator anim = other.gameObject.GetComponent<Animator>();
             Cair cair = other.gameObject.GetComponent<Cair>();
-            Debug.Log(other.name);
             cair.velocidade = 0;
             if (other.gameObject.tag == "Fruta")
             {

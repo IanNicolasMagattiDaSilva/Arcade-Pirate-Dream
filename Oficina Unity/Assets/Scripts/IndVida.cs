@@ -12,12 +12,14 @@ public class IndVida : MonoBehaviour
     public List<GameObject> Vidas = new List<GameObject>();
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        vidaAtual = Jogador.vida;
         starPos = transform.position.x;
         length = vida.GetComponent<SpriteRenderer>().bounds.size.x;
         PrintVida();
-        vidaAtual = Jogador.vida;
+        Update();
+        
     }
 
     // Update is called once per frame
@@ -28,6 +30,11 @@ public class IndVida : MonoBehaviour
             Destroy(Vidas[vidaAtual-1]);
             vidaAtual = Jogador.vida;
         }
+        else if(vidaAtual == 0)
+        {
+            Vidas.Clear();
+        }
+
     }
     void PrintVida()
     {

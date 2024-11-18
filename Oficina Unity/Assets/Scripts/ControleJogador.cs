@@ -16,9 +16,12 @@ public class ControleJogador : MonoBehaviour
     private float movimento;
     public bool die = false;
     
-    private void Start()
+    public  void Start()
     {
+        die = false;
+        vida = 3;
         anim = GetComponent<Animator>();
+        anim.SetBool("Dead", die);
         StartCoroutine("MoveSet");
         col = GetComponent<BoxCollider2D>();
     }
@@ -36,7 +39,6 @@ public class ControleJogador : MonoBehaviour
         {
             Animator animOther = other.gameObject.GetComponent<Animator>();
             Cair cair = other.gameObject.GetComponent<Cair>();
-            Debug.Log(other.name);
             cair.velocidade = 0;
             int pontos = 0;
             StartCoroutine(TimeToDestroy(0.5f, other));
@@ -62,6 +64,8 @@ public class ControleJogador : MonoBehaviour
                 {
                     anim.SetBool("Dead", true);
                     die = true;
+                    controlador.GameOverT();
+                    controlador.GameOverF();
                     StopCoroutine("MoveSet");
 
                     juice.SetBool("Dead", true);
@@ -76,7 +80,6 @@ public class ControleJogador : MonoBehaviour
         }
 
     }
-
 
     IEnumerator TimeToDestroy(float s, Collider2D other)
     {
