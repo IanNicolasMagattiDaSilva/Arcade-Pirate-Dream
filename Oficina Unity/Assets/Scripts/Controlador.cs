@@ -24,8 +24,7 @@ public class Controlador : MonoBehaviour
     public void Start()
     {
         anim = GetComponent<Animator>();
-        placar = 0;
-        placarTexto.SetText(placar.ToString());
+        Replay();
         StartCoroutine(AparecerObjetos());
     }
 
@@ -87,20 +86,21 @@ public class Controlador : MonoBehaviour
         }
     }
 
-    public void GameOverF()
+    public void GameOverF() // Função para desativar GameObjects quando chegar no GameOver
     {
         foreach(GameObject obj in inGame)
         {
             obj.SetActive(false);
         }
     }
-    public void GameOverT()
+    public void GameOverT() // Função para ativar GameObjects quando chegar no GameOver
     {
 
-        foreach (GameObject obj in inGame)
+        foreach (GameObject obj in endGame)
         {
             obj.SetActive(true);
         }
         placarGO.SetText("Placar: " + (placar.ToString()));
+        StopCoroutine("AparecerObjetos");
     }
 }
