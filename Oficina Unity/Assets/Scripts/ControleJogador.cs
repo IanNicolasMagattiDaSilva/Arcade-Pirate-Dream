@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class ControleJogador : MonoBehaviour
 {
     public float velocidade;
+    public AudioSource audioSorce;
     public Controlador controlador;
     public BoxCollider2D col;
     public Animator anim, juice;
@@ -15,7 +16,9 @@ public class ControleJogador : MonoBehaviour
     public int vida;
     private float movimento;
     public bool die = false;
-    
+    public AudioClip pointEffect;
+    public AudioClip damageEffect;
+    public SpriteRenderer spriteRenderer;
     public  void Start()
     {
         die = false;
@@ -24,6 +27,9 @@ public class ControleJogador : MonoBehaviour
         anim.SetBool("Dead", die);
         StartCoroutine("MoveSet");
         col = GetComponent<BoxCollider2D>();
+        audioSorce = GetComponent<AudioSource>();
+        
+        
     }
     // Update is called once per frame
     void Update()
@@ -31,7 +37,15 @@ public class ControleJogador : MonoBehaviour
         
 
     }
-    
+
+    public void ResetPosition()
+    {
+        transform.position = new Vector3(0f, -3.03f, 0f);
+    }
+    public void ResetOrderLayer()
+    {
+        spriteRenderer.sortingLayerName = "Player";
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -53,6 +67,7 @@ public class ControleJogador : MonoBehaviour
                     case "RedDiamond(Clone)": pontos = 50; break;
                 }
                 controlador.EncostouFruta(pontos);
+                audioSorce.PlayOneShot(pointEffect);
                 animOther.SetBool("effect", true);
                 StartCoroutine(TimeToDestroy(0.25f, other));
             }
@@ -60,7 +75,8 @@ public class ControleJogador : MonoBehaviour
             {
                 controlador.EncostouBomba();
                 vida -= 1;
-                if( vida == 0 )
+                audioSorce.PlayOneShot(damageEffect);
+                if ( vida == 0 )
                 {
                     anim.SetBool("Dead", true);
                     die = true;

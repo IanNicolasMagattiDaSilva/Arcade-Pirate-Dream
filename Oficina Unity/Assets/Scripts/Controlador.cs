@@ -13,6 +13,7 @@ public class Controlador : MonoBehaviour
     public GameObject Gcoin,Scoin,Gdiamond,Bdiamond,Rdiamond, bomba;
     public List<GameObject> inGame,endGame = new List<GameObject>();
     public float tempo;
+    
 
     public int placar;
 
@@ -25,7 +26,18 @@ public class Controlador : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         Replay();
+    }
+
+    
+
+    public void StartAparecerObj()
+    {
         StartCoroutine(AparecerObjetos());
+    }
+
+    public void StopAparecerObj()
+    {
+        StopCoroutine(AparecerObjetos());
     }
 
     public void EncostouBomba()
@@ -87,7 +99,7 @@ public class Controlador : MonoBehaviour
     }
 
     public void GameOverF() // Função para desativar GameObjects quando chegar no GameOver
-    {
+    {   
         foreach(GameObject obj in inGame)
         {
             obj.SetActive(false);
