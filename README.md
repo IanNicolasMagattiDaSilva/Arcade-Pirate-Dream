@@ -5,7 +5,7 @@ Esse jogo foi criado para ser um projeto de exemplo de um Oficina para introduzi
 Este é um projeto de um jogo arcade, simples de ser jogado, que se passa nos sonhos de um pirata, em que há moedas e diamantes caindo do céu. Um verdedeiro sonho para qualquer pirata! Porém nem tudo são flores, e de vez em quando, ao invés de cair uma bela pedra de Jade pode vir a cair uma bala de canhão! Então cuidado em sua jogatina.
 
 ### Desenvolvedores
-Ian Nicolas Magatti da Silva\
+Ian Nicolas Magatti da Silva [Meu GitHub](https://github.com/IanNicolasMagattiDaSilva) \
 Mário Bozolão Neto\
 André Kazuo Yasui
 
