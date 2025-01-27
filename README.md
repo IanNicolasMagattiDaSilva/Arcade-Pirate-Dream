@@ -6,7 +6,7 @@ Este é um projeto de um jogo arcade, simples de ser jogado, que se passa nos so
 ### Desenvolvedores
 Ian Nicolas Magatti da Silva\
 Mário Bozolão Neto\
-André Kazuo Yasui\
+André Kazuo Yasui
 
 ## Assets Utilizados
 Sprites: Treasute Hunters (Pixel Frog)\
