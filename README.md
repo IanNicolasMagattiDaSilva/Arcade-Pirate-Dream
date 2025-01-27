@@ -7,3 +7,8 @@ Este é um projeto de um jogo arcade, simples de ser jogado, que se passa nos so
 Ian Nicolas Magatti da Silva\
 Mário Bozolão Neto\
 André Kazuo Yasui\
+
+## Assets Utilizados
+Sprites: Treasute Hunters (Pixel Frog)\
+Fonte: Pixelfy Sans (Google Fonts)\
+SoundEffects: Bos Hit 1 & Fruit Collection (Jade Leamcharaskul)
