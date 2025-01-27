@@ -1,4 +1,4 @@
-# Arcade Pirate Dream Diversão Séria: Oficina de Unity
+# Arcade Pirate Dream - Diversão Séria: Oficina de Unity
 
 Esse jogo foi criado para ser um projeto de exemplo de um Oficina para introduzir a ferramente Unity. A oficina será realizada pelo projeto de extensão Diversão Séria da Universidade Federal do ABC.
 
