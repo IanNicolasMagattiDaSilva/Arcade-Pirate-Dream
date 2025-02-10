@@ -12,7 +12,8 @@ André Kazuo Yasui
 ## Assets Utilizados
 Sprites: Treasute Hunters (Pixel Frog)\
 Fonte: Pixelfy Sans (Google Fonts)\
-SoundEffects: Bos Hit 1 & Fruit Collection (Jade Leamcharaskul)
+Efeitos de Som: Bos Hit 1 & Fruit Collection (Jade Leamcharaskul)\
+Musica tema: 08-Shop - 16 bit Fantasy & Adventure (xDeviruchi)
 
 ## Prévia do Jogo
 #### Menus
