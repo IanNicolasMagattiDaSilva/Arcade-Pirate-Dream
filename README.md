@@ -13,3 +13,16 @@ André Kazuo Yasui
 Sprites: Treasute Hunters (Pixel Frog)\
 Fonte: Pixelfy Sans (Google Fonts)\
 SoundEffects: Bos Hit 1 & Fruit Collection (Jade Leamcharaskul)
+
+## Prévia do Jogo
+#### Menus
+![jogomenu](https://github.com/user-attachments/assets/ffb00b04-7182-4766-95e6-0831928675e2)
+#### Créditos
+![creditos](https://github.com/user-attachments/assets/6638f340-b5e4-4000-b310-91386d47311f)
+#### Gameplay
+![gameplay](https://github.com/user-attachments/assets/88b45d59-8ae7-41ba-a117-c6e3427988b3)
+#### GameOver
+![gameover](https://github.com/user-attachments/assets/dab9f079-1609-4c60-8a00-3449eb5ae3be)
+
+
+
