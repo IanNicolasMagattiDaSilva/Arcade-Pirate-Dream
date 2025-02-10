@@ -19,7 +19,7 @@ Musica tema: 08-Shop - 16 bit Fantasy & Adventure (xDeviruchi)
 #### Menus
 ![jogomenu](https://github.com/user-attachments/assets/ffb00b04-7182-4766-95e6-0831928675e2)
 #### Créditos
-![creditos](https://github.com/user-attachments/assets/6638f340-b5e4-4000-b310-91386d47311f)
+![creditos](https://github.com/user-attachments/assets/a25d5e24-eaa3-4acf-bf4c-8966312988f6)
 #### Gameplay
 ![gameplay](https://github.com/user-attachments/assets/88b45d59-8ae7-41ba-a117-c6e3427988b3)
 #### GameOver
