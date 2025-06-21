@@ -2,7 +2,9 @@
 
 Esse jogo foi criado para ser um projeto de exemplo de uma Oficina para introduzir a ferramente Unity. A oficina será realizada pelo projeto de extensão Diversão Séria da Universidade Federal do ABC.
 
-Este é um projeto de um jogo arcade, simples de ser jogado, que se passa nos sonhos de um pirata, em que há moedas e diamantes caindo do céu. Um verdedeiro sonho para qualquer pirata! Porém nem tudo são flores, e de vez em quando, ao invés de cair uma bela pedra de Jade pode vir a cair uma bala de canhão! Então cuidado em sua jogatina.
+Este é um projeto de um jogo arcade, simples de ser jogado, em que há moedas e diamantes caindo do céu, um sonho para qualquer pirata! Porém nem tudo são flores, e de vez em quando, ao invés de cair uma bela pedra de Jade pode cair uma bala de canhão! Então cuidado em sua jogatina.
+
+Esse é o projeto repositório contem o projeto Unity do jogo.
 
 ### Desenvolvedores
 [Ian Nicolas Magatti da Silva](https://github.com/IanNicolasMagattiDaSilva) \
