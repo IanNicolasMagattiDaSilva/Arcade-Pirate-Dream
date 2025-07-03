@@ -6,6 +6,8 @@ Este é um projeto de um jogo arcade, simples de ser jogado, em que há moedas e
 
 Esse é o projeto repositório contem o projeto Unity do jogo.
 
+Os arquivos presentes no diretório "Oficina Unity" é o projeto Unity do jogo, para acessa-lo corretamente, é indicado o uso do [Unity Hub](https://unity.com/pt/unity-hub)
+
 ### Desenvolvedores
 [Ian Nicolas Magatti da Silva](https://github.com/IanNicolasMagattiDaSilva) \
 Mário Bozolão Neto\
@@ -16,6 +18,9 @@ Sprites: Treasute Hunters (Pixel Frog)\
 Fonte: Pixelfy Sans (Google Fonts)\
 Efeitos de Som: Bos Hit 1 & Fruit Collection (Jade Leamcharaskul)\
 Musica tema: 08-Shop - 16 bit Fantasy & Adventure (xDeviruchi)
+
+## Download
+[⬇️ Baixar o Jogo:](./Build.rar)
 
 ## Prévia do Jogo
 #### Menus
